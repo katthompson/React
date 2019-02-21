@@ -1,0 +1,35 @@
+
+* {box-sizing: border-box;}
+.form-wrapper {width:100%;}
+.form-content {max-width:1000px; margin:0 auto;}
+.form-content h1 {text-align:center;}
+form {margin:50px auto; width:80%; max-width:600px; text-align:left; display:flex; flex-wrap:wrap;}
+.form-group {margin-bottom:10px; height:90px; position:relative; width:50%; padding:0 10px;}
+.form-group.cb-group {height:45px;}
+.form-group.radios {height:auto;}
+label {display:inline-block; margin-bottom:5px;}
+label.cbLabel {display:inline-block;}
+label + span { display:inline-block; }
+input {height:34px; width:100%; display:block;}
+input[type="checkbox"], input[type="radio"] {height:auto; width:auto; display:inline-block; margin-right:10px;}
+
+select {height:34px; width:100%; display:block;}
+select + span { display:inline-block; }
+
+.button-group {margin-top:10px; width:100%;}
+
+/*Using native HTML5 validation*/
+/*Added noValidate to the form to stop the browser from adding its own styles, then tell it 
+what to do in the form component*/
+input.active:valid {box-shadow:0 0 5px 1px green;} 
+select.active:valid {box-shadow:0 0 5px 1px green;}
+input.active:invalid {box-shadow: 0 0 5px 1px red;}
+input[type="checkbox"].active:not(:checked) {box-shadow: 0 0 5px 1px red;}
+select.active:invalid {box-shadow: 0 0 5px 1px red;}
+.error {color:red; font-size:12px; margin-top:5px; position:absolute; left:10px; bottom:0;}
+
+@media (max-width:600px) {
+    .form-group {width:100%;}
+    .form-wrapper {margin-top:70px;}
+    .form-content {padding-top:1px;}
+}
